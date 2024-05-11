@@ -16,7 +16,6 @@ const IconController = () => {
     getInitialValue("iconColor", "rgba(255,255,255,1)")
   );
 
-
   useEffect(() => {
     const updatedValue = {
       ...storedValues,
