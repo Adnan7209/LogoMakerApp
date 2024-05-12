@@ -19,10 +19,10 @@ const IconController = () => {
             Size <span>{size}px</span>
           </label>
           <Slider
-            defaultValue={size}
+            defaultValue={[size]}
             max={512}
             step={1}
-            onValueChange={(event) => setSize(event)}
+            onValueChange={setSize}
           />
         </div>
         <div className="p-2">
@@ -30,11 +30,11 @@ const IconController = () => {
             Rotate <span>{rotate}°</span>
           </label>
           <Slider
-            defaultValue={rotate}
+            defaultValue={[rotate]}
             min={-360}
             max={360}
             step={1}
-            onValueChange={(event) => setRotate(event)}
+            onValueChange={setRotate}
           />
         </div>
         <div className="p-2">

@@ -13,10 +13,10 @@ const BackgroundController = () => {
           Rounded <span>{rounded}px</span>
         </label>
         <Slider
-          defaultValue={rounded}
+          defaultValue={[rounded]}
           max={100}
           step={1}
-          onValueChange={(event) => setRounded(event)}
+          onValueChange={setRounded}
         />
       </div>
       <div className="p-2">
@@ -24,10 +24,10 @@ const BackgroundController = () => {
           Padding <span>{padding}px</span>
         </label>
         <Slider
-          defaultValue={padding}
+          defaultValue={[padding]}
           max={100}
           step={1}
-          onValueChange={(event) => setPadding(event)}
+          onValueChange={setPadding}
         />
       </div>
       <div className="p-2">
