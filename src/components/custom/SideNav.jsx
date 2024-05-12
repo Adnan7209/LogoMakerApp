@@ -1,6 +1,7 @@
 import { Image, PencilRuler, Shield } from "lucide-react";
 import React, { useState } from "react";
 
+
 const SideNav = ({ activeIndex, setActiveIndex }) => {
   const menuList = [
     {
@@ -21,7 +22,7 @@ const SideNav = ({ activeIndex, setActiveIndex }) => {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex overflow-auto justify-between items-center">
       {menuList.map((menu, index) => (
         <div
           onClick={() => {
@@ -29,7 +30,7 @@ const SideNav = ({ activeIndex, setActiveIndex }) => {
           }}
           key={index}
           className={`flex items-center mx-6 px-3 py-2  text-white  cursor-pointer hover:scale-125 transition-all duration-300 ${
-            activeIndex == index ? "border-b-4 rounded-md hover:scale-100" : ""
+            activeIndex == index ? "border-b-[5px] rounded-lg hover:scale-100 border-white" : "null"
           }`}
         >
           <menu.icon />

@@ -9,7 +9,7 @@ import Footer from "./components/custom/Footer";
 const App = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div>
+    <div className="w-[100vw]">
       <Header activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
       {/* <div className="w-64 fixed">
         <SideNav activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
