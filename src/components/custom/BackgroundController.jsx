@@ -1,28 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Slider } from "../ui/slider";
 import ColorPickerController from "./ColorPickerController";
+import { UserContext } from "@/context/UserContext";
 
 const BackgroundController = () => {
-  const storedValues = JSON.parse(localStorage.getItem("value"));
-  const getInitialValue = (key, defaultValue) => {
-    return storedValues ? storedValues[key] : defaultValue;
-  };
-
-  const [rounded, setRounded] = useState(() => getInitialValue("bgRounded", 0));
-  const [padding, setPadding] = useState(() => getInitialValue("bgPadding", 0));
-  const [bgColor, setBgColor] = useState(() =>
-    getInitialValue("bgColor", "rgba(255,255,255,1)")
-  );
-
-  useEffect(() => {
-    const updatedValue = {
-      ...storedValues,
-      bgRounded: rounded,
-      bgPadding: padding,
-      bgColor: bgColor,
-    };
-    localStorage.setItem("value", JSON.stringify(updatedValue));
-  }, [rounded, padding, bgColor]);
+  const { rounded, setRounded, padding, setPadding, bgColor, setBgColor } =
+    useContext(UserContext);
   return (
     <div>
       <div className="p-2">

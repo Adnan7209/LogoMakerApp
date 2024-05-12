@@ -1,31 +1,12 @@
 import { Smile } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Slider } from "../ui/slider";
 import ColorPickerController from "./ColorPickerController";
+import { UserContext } from "@/context/UserContext";
 
 const IconController = () => {
-  const storedValues = JSON.parse(localStorage.getItem("value"));
-
-  const getInitialValue = (key, defaultValue) => {
-    return storedValues ? storedValues[key] : defaultValue;
-  };
-
-  const [size, setSize] = useState(() => getInitialValue("iconSize", 0));
-  const [rotate, setRotate] = useState(() => getInitialValue("iconRotate", 0));
-  const [color, setColor] = useState(() =>
-    getInitialValue("iconColor", "rgba(255,255,255,1)")
-  );
-
-  useEffect(() => {
-    const updatedValue = {
-      ...storedValues,
-      iconSize: size,
-      iconRotate: rotate,
-      iconColor: color,
-      icon: "Smile",
-    };
-    localStorage.setItem("value", JSON.stringify(updatedValue));
-  }, [size, rotate, color]);
+  const { size, setSize, rotate, setRotate, color, setColor } =
+    useContext(UserContext);
   return (
     <div>
       <div>
