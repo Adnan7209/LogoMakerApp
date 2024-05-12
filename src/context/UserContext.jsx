@@ -1,5 +1,6 @@
-import React, { Children, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { createContext } from "react";
+import * as htmlToImage from "html-to-image";
 
 export const UserContext = createContext();
 const UserProvider = ({ children }) => {
@@ -23,6 +24,24 @@ const UserProvider = ({ children }) => {
   const [iconName, setIconName] = useState(() =>
     getInitialValue("iconName", "Smile")
   );
+
+  const iconRef = useRef();
+  const downloadIconAsPng = () => {
+    const node = iconRef.current;
+    htmlToImage
+      .toPng(node)
+      .then(function (dataUrl) {
+        const link = document.createElement("a");
+        link.download = `${iconName}.png`;
+        link.href = dataUrl;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      })
+      .catch(function (error) {
+        console.error("Could not generate image", error);
+      });
+  };
 
   useEffect(() => {
     const updatedValue = {
@@ -52,6 +71,8 @@ const UserProvider = ({ children }) => {
     bgColor,
     setBgColor,
     iconName,
+    iconRef,
+    downloadIconAsPng,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

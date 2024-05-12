@@ -13,11 +13,11 @@ const App = () => {
       <div className="w-64 fixed">
         <SideNav activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
       </div>
-      <div className="ml-64 grid grid-cols-1 md:grid-cols-6 fixed">
+      <div className="ml-64 grid grid-cols-1 md:grid-cols-6 ">
         <div className="md:col-span-2 border h-screen shadow-sm p-5 overflow-auto">
           {activeIndex == 0 ? <IconController /> : <BackgroundController />}
         </div>
-        <div className="md:col-span-3">
+        <div className="md:col-span-3 ">
           <LogoPreview />
         </div>
         <div className="bg-blue-100">ads banner</div>

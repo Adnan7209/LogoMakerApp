@@ -1,10 +1,20 @@
 import { UserContext } from "@/context/UserContext";
-import { icons } from "lucide-react";
+import { Download, icons } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 const LogoPreview = () => {
-  const { size, rotate, color, rounded, padding, bgColor, iconName } =
-    useContext(UserContext);
+  const {
+    size,
+    rotate,
+    color,
+    rounded,
+    padding,
+    bgColor,
+    iconName,
+    iconRef,
+    downloadIconAsPng,
+  } = useContext(UserContext);
   const Icon = ({ name, color, size, rotate }) => {
     const LucideIcon = icons[name];
     if (!LucideIcon) {
@@ -16,10 +26,12 @@ const LogoPreview = () => {
         size={size}
         style={{
           transform: `rotate(${rotate}deg)`,
+          transformOrigin: "center",
         }}
       />
     );
   };
+
   return (
     <div className="flex items-center justify-center h-screen ">
       <div
@@ -27,13 +39,14 @@ const LogoPreview = () => {
         style={{ padding: `${padding}px` }}
       >
         <div
+          ref={iconRef}
+          id="downloadLogoDiv"
           className="h-full w-full flex justify-center items-center"
           style={{
             borderRadius: `${rounded}px`,
             backgroundColor: bgColor,
           }}
         >
-          {/* {size}{rotate}{color}{rounded}{padding}{bgColor}{iconName} */}
           <Icon name={iconName} color={color} size={size} rotate={rotate} />
         </div>
       </div>
