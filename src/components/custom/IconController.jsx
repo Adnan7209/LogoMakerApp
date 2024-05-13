@@ -3,17 +3,21 @@ import React, { useContext, useEffect, useState } from "react";
 import { Slider } from "../ui/slider";
 import ColorPickerController from "./ColorPickerController";
 import { UserContext } from "@/context/UserContext";
+import LogoPreview from "./LogoPreview";
 
 const IconController = () => {
-  const { size, setSize, rotate, setRotate, color, setColor } =
+  const { size, setSize, rotate, setRotate, color, setColor,iconName } =
     useContext(UserContext);
   return (
     <div>
-      <div>
-        <label>Icon</label>
-        <div className="p-3 cursor-pointer bg-gray-200 rounded-md w-[150px] h-[150px] flex items-center justify-center my-2">
+      <div>       
+        <div className="flex flex-col justify-center items-center">
+        <label className="text-xl">Icon: <span>{iconName}</span></label>
+        <div className="p-3 cursor-pointer bg-gray-200 rounded-md w-[100px] h-[100px] flex items-center justify-center my-2">
           <Smile />
         </div>
+        </div>
+        
         <div className="p-2">
           <label className="p-2 flex justify-between items-center">
             Size <span>{size}px</span>

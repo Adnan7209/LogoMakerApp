@@ -5,23 +5,25 @@ import IconController from "./components/custom/IconController";
 import BackgroundController from "./components/custom/BackgroundController";
 import LogoPreview from "./components/custom/LogoPreview";
 import Footer from "./components/custom/Footer";
+import { Separator } from "./components/ui/separator";
 
 const App = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="w-[100vw]">
       <Header activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-      {/* <div className="w-64 fixed">
-        <SideNav activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-      </div> */}
       <div className=" grid grid-cols-1 md:grid-cols-6 ">
-        <div className="md:col-span-2 border h-screen shadow-sm p-5 overflow-auto">
+        <div className="md:hidden h-[350px] w-screen overflow-scroll  p-5 ">
+        <LogoPreview />
+        </div>
+        <div className="md:col-span-3 border h-screen shadow-sm p-5 overflow-auto">
+          <Separator className="md:hidden"/>
           {activeIndex == 0 ? <IconController /> : <BackgroundController />}
         </div>
-        <div className="md:col-span-3 ">
+        <div className="hidden md:block md:col-span-3 ">
           <LogoPreview />
         </div>
-        <div className="bg-blue-100">ads banner</div>
+        {/* <div className="bg-blue-100">ads banner</div> */}
       </div>
       <Footer/>
     </div>

@@ -33,7 +33,9 @@ const LogoPreview = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen ">
+    <>
+    {/* <h2 className="text-3xl text-center mt-5 underline font-bold">LOGO PREVIEW</h2> */}
+    <div className="flex  md:h-screen h-[550px] justify-center items-center ">
       <div
         className="h-[500px] w-[500px] bg-gray-200 outline-dotted outline-gray-400 "
         style={{ padding: `${padding}px` }}
@@ -51,6 +53,7 @@ const LogoPreview = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
