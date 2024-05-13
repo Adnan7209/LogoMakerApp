@@ -6,6 +6,7 @@ import BackgroundController from "./components/custom/BackgroundController";
 import LogoPreview from "./components/custom/LogoPreview";
 import Footer from "./components/custom/Footer";
 import { Separator } from "./components/ui/separator";
+import IconList from "./components/custom/IconList";
 
 const App = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -14,18 +15,17 @@ const App = () => {
       <Header activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
       <div className=" grid grid-cols-1 md:grid-cols-6 ">
         <div className="md:hidden h-[350px] w-screen overflow-scroll  p-5 ">
-        <LogoPreview />
+          <LogoPreview />
         </div>
         <div className="md:col-span-3 border h-screen shadow-sm p-5 overflow-auto">
-          <Separator className="md:hidden"/>
+          <Separator className="md:hidden" />
           {activeIndex == 0 ? <IconController /> : <BackgroundController />}
         </div>
         <div className="hidden md:block md:col-span-3 ">
           <LogoPreview />
         </div>
-        {/* <div className="bg-blue-100">ads banner</div> */}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

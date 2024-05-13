@@ -14,7 +14,7 @@ const BackgroundController = () => {
         </label>
         <Slider
           defaultValue={[rounded]}
-          max={100}
+          max={150}
           step={1}
           onValueChange={setRounded}
         />

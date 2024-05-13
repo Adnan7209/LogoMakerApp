@@ -1,20 +1,10 @@
 import { UserContext } from "@/context/UserContext";
 import { Download, icons } from "lucide-react";
-import React, { useContext, useEffect, useState } from "react";
-import { Button } from "../ui/button";
+import React, { useContext } from "react";
 
 const LogoPreview = () => {
-  const {
-    size,
-    rotate,
-    color,
-    rounded,
-    padding,
-    bgColor,
-    iconName,
-    iconRef,
-    downloadIconAsPng,
-  } = useContext(UserContext);
+  const { size, rotate, color, rounded, padding, bgColor, iconName, iconRef } =
+    useContext(UserContext);
   const Icon = ({ name, color, size, rotate }) => {
     const LucideIcon = icons[name];
     if (!LucideIcon) {
@@ -34,25 +24,27 @@ const LogoPreview = () => {
 
   return (
     <>
-    {/* <h2 className="text-3xl text-center mt-5 underline font-bold">LOGO PREVIEW</h2> */}
-    <div className="flex  md:h-screen h-[550px] justify-center items-center ">
-      <div
-        className="h-[500px] w-[500px] bg-gray-200 outline-dotted outline-gray-400 "
-        style={{ padding: `${padding}px` }}
-      >
+      <h2 className="md:text-3xl sm:text-xl text-center m-2 underline font-bold">
+        LOGO PREVIEW
+      </h2>
+      <div className="flex  md:h-screen h-[550px] justify-center md:mt-[50px] ">
         <div
-          ref={iconRef}
-          id="downloadLogoDiv"
-          className="h-full w-full flex justify-center items-center"
-          style={{
-            borderRadius: `${rounded}px`,
-            backgroundColor: bgColor,
-          }}
+          className="h-[500px] w-[500px] bg-gray-200 outline-dotted outline-gray-400 "
+          style={{ padding: `${padding}px` }}
         >
-          <Icon name={iconName} color={color} size={size} rotate={rotate} />
+          <div
+            ref={iconRef}
+            id="downloadLogoDiv"
+            className="h-full w-full flex justify-center items-center"
+            style={{
+              borderRadius: `${rounded}px`,
+              backgroundColor: bgColor,
+            }}
+          >
+            <Icon name={iconName} color={color} size={size} rotate={rotate} />
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };
