@@ -71,6 +71,7 @@ const UserProvider = ({ children }) => {
     bgColor,
     setBgColor,
     iconName,
+    setIconName,
     iconRef,
     downloadIconAsPng,
   };

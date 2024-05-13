@@ -1,4 +1,4 @@
-import { Smile } from "lucide-react";
+import { Smile, icons } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
 import { Slider } from "../ui/slider";
 import ColorPickerController from "./ColorPickerController";
@@ -9,6 +9,14 @@ import IconList from "./IconList";
 const IconController = () => {
   const { size, setSize, rotate, setRotate, color, setColor, iconName } =
     useContext(UserContext);
+    const Icon = ({iconName})=>{
+      const LucideIcon = icons[iconName];
+      if(!LucideIcon)
+        return <p>{iconName}</p>
+      return (<LucideIcon size={60}/>)
+
+
+    }
   return (
     <div>
       <div>
@@ -17,7 +25,8 @@ const IconController = () => {
             Icon: <span>{iconName}</span>
           </label>
           <div className="p-3 cursor-pointer bg-gray-200 rounded-md w-[100px] h-[100px] flex items-center justify-center my-2">
-            <Smile size={60} />
+            <Icon iconName={iconName} />
+            
           </div>
           <IconList />
         </div>

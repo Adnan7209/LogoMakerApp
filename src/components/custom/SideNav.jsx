@@ -21,7 +21,7 @@ const SideNav = ({ activeIndex, setActiveIndex }) => {
   ];
 
   return (
-    <div className="flex overflow-auto justify-between items-center">
+    <div className="flex overflow-auto justify-between items-center  " >
       {menuList.map((menu, index) => (
         <div
           onClick={() => {
