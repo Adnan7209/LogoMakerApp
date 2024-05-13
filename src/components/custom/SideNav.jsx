@@ -13,15 +13,10 @@ const SideNav = ({ activeIndex, setActiveIndex }) => {
       name: "Background",
       icon: Image,
     },
-    {
-      id: 3,
-      name: "Upgrade",
-      icon: Shield,
-    },
   ];
 
   return (
-    <div className="flex overflow-auto justify-between items-center  " >
+    <div className="flex  justify-between items-center  " >
       {menuList.map((menu, index) => (
         <div
           onClick={() => {

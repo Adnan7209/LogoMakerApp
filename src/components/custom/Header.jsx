@@ -11,7 +11,7 @@ const Header = ({activeIndex,setActiveIndex}) => {
   const { downloadIconAsPng } = useContext(UserContext);
   return (
     <>
-    <div className="px-10 py-2 gap-3 flex justify-between  items-center bg-[#23a2d4] ">
+    <div className="px-10 py-2 gap-3 flex justify-between  items-center bg-[#23a2d4] overflow-x-hidden ">
       <div className="flex gap-2 items-center"><img src={logo} width={60} alt="logoExpress" />
       <span className=" md:text-3xl text-white font-thin">LogoExpress</span>
       </div>

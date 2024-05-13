@@ -29,7 +29,7 @@ const LogoPreview = () => {
       </h2>
       <div className="flex  md:h-screen h-[550px] justify-center md:mt-[50px] ">
         <div
-          className="h-[500px] w-[500px] bg-gray-200 outline-dotted outline-gray-400 "
+          className="h-[500px] w-[500px] bg-gray-200 outline-dashed outline-2  outline-gray-700 "
           style={{ padding: `${padding}px` }}
         >
           <div
