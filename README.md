@@ -113,5 +113,6 @@ Key libraries and packages used in this project:
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Adnan7209/LogoMakerApp/blob/main/LICENSE) file for details.
+
 
